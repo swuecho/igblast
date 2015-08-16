@@ -1,0 +1,20 @@
+# $Id: Makefile.xalgoalignutil.lib 436583 2014-05-29 14:48:13Z mozese2 $
+
+WATCHERS = kapustin dicuccio
+
+SRC = align_shadow blast_tabular score_builder score_lookup align_filter \
+      genomic_compart patch_sequence align_compare align_sort \
+      depth_filter tabular_fmt
+
+LIB = xalgoalignutil
+
+DLL_LIB = xqueryparse xalgoseq taxon1 xregexp $(BLAST_LIBS)
+
+ASN_DEP = seqset xnetblast
+
+CXXFLAGS = $(FAST_CXXFLAGS)
+LDFLAGS  = $(FAST_LDFLAGS)
+
+
+USES_LIBRARIES =  \
+    $(BLAST_LIBS) xalgoseq xqueryparse

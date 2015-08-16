@@ -1,0 +1,16 @@
+# $Id: Makefile.in 394053 2013-03-29 17:53:13Z maning $
+
+APP_PROJ = igblastp igblastn
+
+REQUIRES = objects algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+
+.PHONY: all $(APP_PROJ)
+
+igblastn:
+	${MAKE} ${MFLAGS} -f Makefile.igblastn_app
+igblastp:
+	${MAKE} ${MFLAGS} -f Makefile.igblastp_app
+
